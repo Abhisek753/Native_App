@@ -7,7 +7,9 @@ const SignUpForm = ({navigation}) => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [firstName, setFirstName] = useState('');
   const [age, setAge] = useState('');
-
+  const handleNavigateHome=()=>{
+    navigation.navigate("Home")
+  }
   const handleCreateAccount =async () => {
     const formData = {
         email,
@@ -32,8 +34,8 @@ const SignUpForm = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Text style={{ marginBottom: 20, fontWeight: '800', fontSize: 30, color: 'white' }}>
-        <Text style={{ backgroundColor: 'black', borderWidth: 1, borderColor: 'white', padding: 5 }}>
+      <Text style={{ marginBottom: 20, fontWeight: '800', fontSize: 30, color: 'white' }} onPress={handleNavigateHome} >
+        <Text style={{ backgroundColor: 'black', borderWidth: 1, borderColor: 'white', padding: 5 }} >
           CUEMATH
         </Text>{' '}
         <Text style={{ color: 'gold' }}>GO!</Text>

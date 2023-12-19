@@ -2,10 +2,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
-const LoginForm = () => {
+const LoginForm = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+const handleNavigateHome=()=>{
+  navigation.navigate("Home")
+}
   const handleLogin = async () => {
     try {
       const storedData = await AsyncStorage.getItem('formData');
@@ -16,6 +18,7 @@ const LoginForm = () => {
         // Check if entered email and password match stored data
         if (email === storedObject.email && password === storedObject.password) {
           console.log('Login successful!');
+          navigation.navigate("Page")
           alert("Login successful!")
         } else {
           console.log('Email or password does not match.');
@@ -31,7 +34,7 @@ const LoginForm = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={{ marginBottom: 20, fontWeight: '800', fontSize: 30, color: 'white' }}>
+      <Text style={{ marginBottom: 20, fontWeight: '800', fontSize: 30, color: 'white' }} onPress={handleNavigateHome} >
         <Text style={{ backgroundColor: 'black', borderWidth: 1, borderColor: 'white', padding: 5 }}>
           CUEMATH
         </Text>{' '}
