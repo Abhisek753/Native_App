@@ -14,7 +14,7 @@ const CarausalPage = ({ navigation }) => {
       flex: 1,
       justifyContent: "center",
       alignItems: "center",
-      heigth: "100%",
+      height: "100%", 
     },
     slide2: {
       flex: 1,
@@ -36,12 +36,11 @@ const CarausalPage = ({ navigation }) => {
     navigation.navigate("Profile");
   };
 
-  const handlePageDataChange=()=>{
+  const handlePageDataChange = () => {
     navigation.navigate("ProfileData");
-
-  }
+  };
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: "black" }}>
+    <ScrollView style={{ flex: 1, backgroundColor: "black", height: "100%" }}>
       <View
         style={{
           flexDirection: "row",
@@ -54,8 +53,13 @@ const CarausalPage = ({ navigation }) => {
         </View>
         <Text style={{ color: "white", fontSize: 16 }}>user@example.com</Text>
 
-        <TouchableOpacity >
-          <Text style={{ color: "white", fontSize: 16 }} onPress={() => navigation.navigate("Login")}>Logout</Text>
+        <TouchableOpacity>
+          <Text
+            style={{ color: "white", fontSize: 16 }}
+            onPress={() => navigation.navigate("Login")}
+          >
+            Logout
+          </Text>
         </TouchableOpacity>
       </View>
 
@@ -65,6 +69,9 @@ const CarausalPage = ({ navigation }) => {
           justifyContent: "center",
           alignItems: "center",
           marginVertical: 20,
+          // borderColor:"blue",
+          // borderWidth:2,
+          height :460,
         }}
       >
         <Swiper style={styles.wrapper} showsButtons loop={false}>
@@ -87,37 +94,37 @@ const CarausalPage = ({ navigation }) => {
             </TouchableOpacity>
           </View>
           <View testID="Beautiful" style={styles.slide2}>
-          <TouchableOpacity
+            <TouchableOpacity
               // style={styles.slide}
               onPress={handlePageDataChange}
             >
-            <LottieView
-              source={require("../Lottie/lottietwo.json")}
-              autoPlay
-              loop
-              style={{
-                width: 200,
-                height: 200,
-                backgroundColor: "transparent",
-              }}
-            />
+              <LottieView
+                source={require("../Lottie/lottietwo.json")}
+                autoPlay
+                loop
+                style={{
+                  width: 200,
+                  height: 200,
+                  backgroundColor: "transparent",
+                }}
+              />
             </TouchableOpacity>
           </View>
           <View testID="Simple" style={styles.slide3}>
-          <TouchableOpacity
+            <TouchableOpacity
               // style={styles.slide}
               onPress={handlePageDataChange}
             >
-            <LottieView
-              source={require("../Lottie/lottieone.json")}
-              autoPlay
-              loop
-              style={{
-                width: 200,
-                height: 200,
-                backgroundColor: "transparent",
-              }}
-            />
+              <LottieView
+                source={require("../Lottie/lottieone.json")}
+                autoPlay
+                loop
+                style={{
+                  width: 200,
+                  height: 200,
+                  backgroundColor: "transparent",
+                }}
+              />
             </TouchableOpacity>
           </View>
         </Swiper>
