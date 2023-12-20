@@ -6,6 +6,8 @@ import fronesecond from "../assets/frametwo.png";
 import fronethird from "../assets/framethree.png";
 import logo from "../assets/Avatar.png";
 import LottieView from "lottie-react-native";
+// import { Swiper } from 'react-native-swiper';
+
 
 const CarausalPage = ({ navigation }) => {
   var styles = {

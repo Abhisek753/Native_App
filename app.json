@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "expoapp",
-    "slug": "expoapp",
+    "name": "Cuemath",
+    "slug": "cuemath-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/iconshow.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
