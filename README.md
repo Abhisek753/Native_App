@@ -14,7 +14,11 @@ Check out the [video demo](https://drive.google.com/drive/folders/1-ff-MOict9kft
 
 ## Screenshots
 
-(If you have screenshots of your app, consider adding them here.)
+(https://github.com/Abhisek753/Native_App/assets/112477961/a7c8ea0a-e776-4348-8bb9-6b0131dc715e)
+(https://github.com/Abhisek753/Native_App/assets/112477961/77a187c0-472c-4e86-91a1-71090fb68ae9)
+(https://github.com/Abhisek753/Native_App/assets/112477961/587d0e2f-9f47-492e-8649-01e1ccf482f2)
+(https://github.com/Abhisek753/Native_App/assets/112477961/5739395c-8296-4526-be43-5575cab40b72)
+
 
 ## Resume
 
