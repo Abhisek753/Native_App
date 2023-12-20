@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, ScrollView, Image } from "react-native";
 import Swiper from "react-native-swiper";
 import frone from "../assets/frameone.png";
@@ -6,10 +6,12 @@ import fronesecond from "../assets/frametwo.png";
 import fronethird from "../assets/framethree.png";
 import logo from "../assets/Avatar.png";
 import LottieView from "lottie-react-native";
-// import { Swiper } from 'react-native-swiper';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 const CarausalPage = ({ navigation }) => {
+  const [data, setData] = useState(null);
+
   var styles = {
     wrapper: {},
     slide1: {
@@ -41,6 +43,29 @@ const CarausalPage = ({ navigation }) => {
   const handlePageDataChange = () => {
     navigation.navigate("ProfileData");
   };
+  
+
+  useEffect(() => {
+    getStoredFormData();
+  }, []);
+
+  const getStoredFormData = async () => {
+    try {
+      const storedData = await AsyncStorage.getItem("formData");
+
+      if (storedData !== null) {
+        const formData = JSON.parse(storedData);
+        console.log("Form data retrieved from local storage:", formData);
+        setData(formData)
+      } else {
+        console.log("No form data found in local storage");
+      }
+    } catch (error) {
+      console.error("Error retrieving form data from local storage:", error);
+    }
+  };
+
+
   return (
     <ScrollView style={{ flex: 1, backgroundColor: "black", height: "100%" }}>
       <View
@@ -53,7 +78,7 @@ const CarausalPage = ({ navigation }) => {
         <View>
           <Image style={{ width: 30, height: 30 }} source={logo} />
         </View>
-        <Text style={{ color: "white", fontSize: 16 }}>user@example.com</Text>
+        <Text style={{ color: "white", fontSize: 16 }}>{data?.email}</Text>
 
         <TouchableOpacity>
           <Text
