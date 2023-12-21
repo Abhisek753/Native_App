@@ -160,9 +160,9 @@ const CarausalPage = ({ navigation }) => {
       <View style={{ height: 50 }} />
 
       <View
-        style={{ backgroundColor: "gray", padding: 16, alignItems: "center" }}
+        style={{ backgroundColor: "gray", padding: 16, alignItems: "center",borderTopLeftRadius: 50, borderTopRightRadius: 50}}
       >
-        <Text style={{ color: "white", fontSize: 16 }}>Footer Content</Text>
+        <Text style={{ color: "white", fontSize: 16 }}>Bottom Sheet</Text>
       </View>
     </ScrollView>
   );
